@@ -7,7 +7,7 @@
 # to switch between compilation modes.
 
 # (A) Production use (optimized mode)
-OPT ?= -O2 -DNDEBUG
+OPT ?= -O2 -DNDEBUG                                                                 # add -D before NDEBUG will ingore all the assert.
 # (B) Debug mode, w/ full line-level debugging symbols
 # OPT ?= -g2
 # (C) Profiling mode: opt, but w/debugging symbols
@@ -101,7 +101,7 @@ endif  # PLATFORM_SHARED_EXT
 all: $(SHARED) $(LIBRARY)
 
 check: all $(PROGRAMS) $(TESTS)
-	for t in $(TESTS); do echo "***** Running $$t"; ./$$t || exit 1; done
+	for t in $(TESTS); do echo "***** Running $$t"; ./$$t || exit 1; done                  # does the duplicate ??
 
 clean:
 	-rm -f $(PROGRAMS) $(BENCHMARKS) $(LIBRARY) $(SHARED) $(MEMENVLIBRARY) */*.o */*/*.o ios-x86/*/*.o ios-arm/*/*.o build_config.mk

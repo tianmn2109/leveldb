@@ -68,7 +68,7 @@ MEMCMP_FLAG=
 if [ "$CXX" = "g++" ]; then
     # Use libc's memcmp instead of GCC's memcmp.  This results in ~40%
     # performance improvement on readrandom under gcc 4.4.3 on Linux/x86.
-    MEMCMP_FLAG="-fno-builtin-memcmp"
+    MEMCMP_FLAG="-fno-builtin-memcmp"                                                       # whether or not it is build-in ???
 fi
 
 case "$TARGET_OS" in
